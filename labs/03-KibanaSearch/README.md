@@ -11,7 +11,7 @@ The following key topics are part of these exercises:
 - Working with Kibana Query Language
 - Understanding aggregations
 
-## Exercise 1 - Exploring Drivers Licenses
+## Exercise 1 - Exploring Driver Licenses
 
 This first exercise you are required to import the dataset, which we provide with this material.
 
