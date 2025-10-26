@@ -17,7 +17,7 @@ This first exercise you are required to import the dataset, which we provide wit
 
 We already added the CSV download to this course material, which is named as [driverlicenses](./content/driverlicenses.csv).
 
-### 1.1 - Import CSV data
+### Exercise 1.1 - Import CSV data
 
 - Open Home.
 - Click on Add integrations.
@@ -39,7 +39,7 @@ We already added the CSV download to this course material, which is named as [dr
 - Now view and analyse this imported data set. 
 - Do the events show up in Kibana? Can you temporary achieve this using the default created Data View?
 
-### 1.2 - Exploring the data set using KQL
+### Exercise 1.2 - Exploring the data set using KQL
 
 Here you are going to apply your recently learned skills. You are going to query data using KQL, which is the default search language.
 

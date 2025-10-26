@@ -18,7 +18,7 @@ Most simply way is using Curl or [Download the ZIP](https://github.com/avwsoluti
 
 Either choose one of the options to download the training material.
 
-### 1.1 - Download using Curl
+### Exercise 1.1 - Download using Curl
 
 First the lab material and second the Second the deployment code.
 
@@ -29,7 +29,7 @@ unzip elastic-kibana-training-material-main.zip
 mv elastic-kibana-training-material-main elastic-kibana-training-material
 ```
 
-### 1.2 - Download using Git
+### Exercise 1.2 - Download using Git
 
 ```
 cd

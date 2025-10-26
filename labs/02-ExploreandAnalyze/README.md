@@ -23,7 +23,7 @@ We already added the CSV download to this course material, which is named as [ai
 
 Either choose one of the options to download the dataset.
 
-### 1.1 - Import CSV data
+### Exercise 1.1 - Import CSV data
 
 - Open Home.
 - Click on Add integrations.
@@ -45,7 +45,7 @@ Now answer the following questions:
     - Response Action.
     - Data Exfiltrated.
 
-### 1.2 - Creating your own document list
+### Exercise 1.2 - Creating your own document list
 
 Here you are going to apply your recently learned skills. Create a filter and ensure that only the requested data is shown.
 

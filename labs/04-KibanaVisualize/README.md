@@ -16,7 +16,7 @@ The following key topics are part of these exercises:
 This first exercise you are going to analyse the sample web logs which are already loaded into an index for you.
 During this exercise you will use `Kibana Lens` and improve your visualization with `Annotations` and `Reference` layers.
 
-### 1.1 - Create insights on average bytes over time
+### Exercise 1.1 - Create insights on average bytes over time
 
 Open Kibana Lens and ensure the index is using `Kibana Sample Data Logs` as Index View.
 
@@ -25,133 +25,123 @@ Open Kibana Lens and ensure the index is using `Kibana Sample Data Logs` as Inde
 
 <img src="https://github.com/avwsolutions/elastic-kibana-training-material/blob/main/labs/04-KibanaVisualize/content/example11.png?raw=true" alt="example 1-1">
 
+### Exercise 1.2 - Add failed request markers for HTTP errors
 
-### 1.2 - Exploring the data set using KQL
+We are going to continue with our previously created visualization and additional `Annotation`, which will be used to mark and easily identify HTTP Errors, in-specific we are looking for `HTTP Error: 503`.
 
-Here you are going to apply your recently learned skills. You are going to query data using KQL, which is the default search language.
+- Start with adding an additional layer and select the `Annotations` type.
+- Choose `New annotation`. Now click the added Event annotation to start the configuration.
+- Choose custom query and set the KQL query to `response: 503`.
+- Change the name to `HTTP Error`.
+- Change the icon to a `bolt`.
+- As tooltip add an additional field called `ip`.
+- Don't forget to save the dashboard.
 
-Now answer the following questions:
-- What responses do you get when searching for `NL` and `nl`. 
-  - Are there any differences?
-  - Can you explain them?
-- Try the same for `Thomas` and `thomas`.
-- Filter that you only see documents from the `country: US`.
-- Filter for only the documents that are from `Arnold` and `Tim`.
-
-## Exercise 2 - Using DSL Queries
-
-This exercise you will get introduced in using `DSL Queries`. DSL Queries are executed through `Dev Tools` or added to the filters. We are going to use the previously imported `driverlicenses` dataset.
-
-### Exercise 2.1 - Write a simple query
-
-- Open Kibana.
-- Open Dev Tools.
-- Now create a `Match query` that only matches `zach` records.
-- Extend the query that it also includes `thomas`.
-- Now copy/paste the query part to create a `Filter` in `Kibana` and saves this as `DE candidates`.
+<img src="https://github.com/avwsolutions/elastic-kibana-training-material/blob/main/labs/04-KibanaVisualize/content/example12.png?raw=true" alt="example 1-2">
 
 Now answer the following questions:
-- How do you use the filter to exclude the matched documents?
+- What do you see when you hover the annotation?
+- Explain why sometimes the icon is not shown.
+- Can you think of another use case when annotations can be helpful?
 
-### Exercise 2.2 - Quering Sample Flight Data
+### Exercise 1.3 - Add the expected baseline for average bytes usage
 
-Let's create another query, but now we are using the `Sample Flight Data` dataset.
+In most scenarios you always have a baseline or a reference value. This helps us to easily see deviations from our baseline.
+During this exercise you are going to configure a `Reference value`.
 
-```
-GET kibana_sample_data_flights/_search
-{
-  "size": 3,
-  "query": { "match": { "Carrier": "Kibana Airlines" } }
-}
-```
-Now answer the following questions:
-- How many documents are hit?
-- How many documents are shown?
+- Start with adding an additional layer and select the `Reference value` type.
+- Choose a `Data View`. Now click `add a field`.
+- For method choose `Formula` and set this to `average(bytes, kql='response=200')`.
+- Change the name to `Expected baseline`.
+- Change the value format to `bytes`.
+- Change the icon to a `tag`.
+- Don't forget to save the dashboard.
 
-
-### Exercise 2.2 - Optimizing with a DSL Bool Query
-
-Now we are going to optimize our previous query. We only want to see a certain document.
-
-- Filter that we only have flights with destination Japan.
-- Destination weather must not be Sunny, we only love Cloudy.
-- Flight should not take off from the United States.
-- Result must be one document only instead of default 10.
-
-Below a boilerplate to start with.
-
-```
-GET kibana_sample_data_flights/_search
-{
-  "query": {
-    "bool": {
-      "must": {
-      },
-      "filter": {
-      },
-      "must_not": {
-      },
-      "should": {  
-      }
-    }
-  }
-}
-```
+<img src="https://github.com/avwsolutions/elastic-kibana-training-material/blob/main/labs/04-KibanaVisualize/content/example13.png?raw=true" alt="example 1-3">
 
 Now answer the following questions:
-- How many documents are hit?
-- Which country did we origin from?
-- What is the destination weather?
+- Explain why a Formula differs from a static value.
+- Can you think of another use case when references can be helpful?
 
-## Exercise 3 - Apply some statistics using Aggregations
+## Exercise 2 - Using Geospatial data in Kibana Maps
 
-### Exercise 3.1 - Find the average drivers age
+This exercise you will learn another great feature of using `Kibana Maps`. You are going to load `Geospatial data`, such as a `Geo JSON` formatted input file.
 
-Here we are using our previous imported dataset called `driverlicenses`.
+### Exercise 2.1 - Load a Geo JSON file as layer
 
-Below the example aggregation that shows the `average` age of all drivers. Which is a `Metric Aggregation`.
+Some use cases it's great to load a company specific map with store locations or other important geographical areas. Nowadays a lot of Geo data is publically available.  For example the indeling of `Amsterdam`, which is available in `Geo JSON` format. Let's load this into Kibana Maps and solve some questions.
 
-```
-POST user1_driverlicenses/_search
-{
-  "size": 0,
-  "aggs": {
-    "average_age": {
-      "avg": { "field": "age" }
-    }
-  }
-}
-```
+- Open Maps under Analytics.
+- Click Create Map.
+- Click add Layer.
+- Click Upload file.
+- Choose [indelingamsterdam.json](./content/indelingamsterdam.json)
+- Use an unique index name like `user1_amsterdam`.
+- Click `Add as document layer`.
+- Save your Map.
 
-Create a Aggregation query that calculates the `average` age only of drivers that life in the `US`. 
+Now answer the following questions:
+- Can you create a query to display for `Stadsdeel` Zuid?
+- Can you display both display `Stadsdeel` Zuid en Noord? 
+- Which stadsdeel is bigger?
 
-### Exercise 3.2 - Calculate the average age per country
+### Exercise 2.3 - Bous Load Flight destinations on Heat map
 
-Here we are using our previous imported dataset called `driverlicenses`.
+This bonus exercise let you load another type of `Maps visualization` using a Heat map. Here we will use the `Flight data`.
 
-Below the example aggregation that shows the `average` age of all drivers. Which is a `Bucket Aggregation`.
+- Open Maps under Analytics.
+- Click Create Map.
+- Click add Layer.
+- Choose Heat map.
+- Select the `Kibana Sample Data Flights` Data View.
+- Choose either `Destlocation` or `originLocation`.
+- Keep changes and continue.
+- Fill-in an unique name.
 
-Use the previous example aggregation as input. For bucket aggregation you may want to use a `terms`.
+Ensure that the `query` bar is empty and lookup the cities.
 
-Create a Bucket Aggregation query that calculates the `average age` per `country`. 
+Now answer the following questions:
+- Which cities do you see?
+- Which city has the most flights?
 
-### Exercise 3.3 - Visualize your aggregation using Kibana Lens
+## Exercise 3 - First experience with coding Vega
 
-Now it's time to recreate the `average age per country` using Kibana Lens. 
+This exercise you will learn the basics about Vega. Vega is a powerful way of  building dashboards, but can be development heavy especially for non-developer users. You are going to load an example configuration and adjust this for your needs.
 
-- Open Kibana.
-- Click on Visualize Library under Analytics.
-- Ensure that you use the correct Data View.
-- Select the visualization type.
-- Ensure you have the correct aggregation configured for the X-Axis and Y-Axis.
+### Exercise 3.1 - Create a simple Vega-lite example
 
-### Exercise 3.4 - BONUS Improve the aggregation to sort on count of categories
+We are going to create a custom visualization using Vega.
 
-Now let's improve our previous bucket aggregation by adding a sort, which is based on the number of `categories` per country.
-Sorting must be Ascending. 
+- Open Visualization library under Analytics.
+- Click Create Visualization.
+- Choose custom Visualization.
+- Save the boilterplate code for now using a unique visualization name.
+- Now change the title to `My first Vega experience`.
+- Use the previously created index called `user1_cyberthreats`.
+- Fix the timestamp fields (two times) and ensure the timepicker has set for minimum 5 years.
+- Click update to see the results.
+
+Now answer the following questions:
+- What are the benefits using Vega?
+- Which use cases would you apply this?
+
+### Exercise 3.2 - Load the ecommerce demo
+
+This exercise you are going to load the ecommerce demo. The JSON content is already available under [vega-example](./content/vega-example.json)
+
+ Open Visualization library under Analytics.
+- Click Create Visualization.
+- Choose custom Visualization.
+- Clear the code field.
+- Copy/paste the content of [vega-example](./content/vega-example.json).
+- Use reformat if needed.
+- Click update to see the results.
+
+Now answer the following questions:
+- Discover the differences with the previous example.
 
 ## Next Steps
 
-You are ready to start with the fourth lab about [Kibana Visualize](../03-KibanaVisualize/README.md) for Elastic Kibana. Be aware that the trainer might have to explain the training material and provide additional instructions for a jump start.
+You are ready to start with the fourth lab about [Kibana Share](../05-KibanaShare/README.md) for Elastic Kibana. Be aware that the trainer might have to explain the training material and provide additional instructions for a jump start.
 
 Enjoy the exercises!!!

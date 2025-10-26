@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Event counts from all indexes",
+  "data": {
+    "url": {
+      "%context%": true,
+      "%timefield%": "order_date",
+      "index": "kibana_sample_data_ecommerce",
+      "body": {
+        "aggs": {
+          "categories": {
+            "terms": {"field": "category.keyword"},
+            "aggs": {
+              "time_buckets": {
+                "date_histogram": {
+                  "field": "order_date",
+                  "interval": {"%autointerval%": true},
+                  "extended_bounds": {
+                    "min": {"%timefilter%": "min"},
+                    "max": {"%timefilter%": "max"}
+                  },
+                  "min_doc_count": 0
+                }
+              }
+            }
+          }
+        },
+        "size": 0
+      }
+    },
+    "format": {"property": "aggregations.categories.buckets"}
+  },
+  "transform": [{"flatten": ["time_buckets.buckets"], "as": ["buckets"]}],
+  "mark": "area",
+  "encoding": {
+    "x": {"field": "buckets.key", "type": "temporal", "axis": {"title": null}},
+    "y": {
+      "field": "buckets.doc_count",
+      "type": "quantitative",
+      "axis": {"title": "Document count"}
+    },
+    "color": {"field": "key", "type": "nominal"}
+  }
+}
