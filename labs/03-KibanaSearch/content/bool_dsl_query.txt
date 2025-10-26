@@ -1,0 +1,33 @@
+GET kibana_sample_data_flights/_search
+{
+  "size": 1,
+  "query": {
+    "bool": {
+      "must": {
+        "match": {
+          "Carrier": "Kibana Airlines"
+        }
+      },
+      "filter": {
+        "term": {
+          "DestCountry": {
+            "value": "JP"
+          }
+        }
+      },
+      "must_not": {
+        "match": {
+          "DestWeather": "Sunny"
+        }
+      },
+    "should":
+        {
+        "term": {
+            "OriginCountry": {
+              "value": "US"
+            }
+          }
+        }
+    }
+  }
+}

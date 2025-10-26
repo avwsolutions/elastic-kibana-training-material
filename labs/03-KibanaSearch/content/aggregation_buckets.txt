@@ -1,0 +1,45 @@
+POST user1_driverslicenses/_search
+{
+  "size": 0,
+  "aggs": {
+    "Buckets": {
+      "terms": {
+        "field": "country"
+      },
+      "aggs": {
+        "average_age": {
+          "avg": {
+            "field": "age"
+          }
+        }
+      }
+    }
+  }
+}
+
+POST user1_driverslicenses/_search
+{
+  "size": 0,
+  "aggs": {
+    "Buckets": {
+      "terms": {
+        "field": "country",
+        "order": {
+          "total_category_country": "asc"
+        }
+      },
+      "aggs": {
+        "average_age": {
+          "avg": {
+            "field": "age"
+          }
+        },
+        "total_category_country": {
+            "value_count": {
+              "field": "category"
+            }
+        }
+      }
+    }
+  }
+}
