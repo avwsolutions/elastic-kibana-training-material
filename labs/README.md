@@ -12,7 +12,7 @@ If you are unable to complete certain exercises, no problem. You can always comp
 | 2   | [Explore and Analyze using Kibana](02-ExploreandAnalyze/README.md) | In this lab during the exercises attendees will learn about the Explore and Analyse basics using Kibana.|
 | 3   | [Kibana Search](03-KibanaSearch/README.md) | In this lab during the exercises attendees will learn about Kibana Search capabilities like DSL, KQL, Aggregations and more.|
 | 4   | [Kibana Visualize](04-KibanaVisualize/README.md) | In this lab during the exercises attendees will learn about Kibana Visualize capabilities like Kibana Lens, Kibana Maps and using Vega.|
-| 5   | [Advanced Query Tools](05-AdvancedQuerying/README.md) | In this lab during the exercises attendees will learn about adanced query languages like KQL, Lucene, ES|QL and EQL. We also look at the ECS.|
+| 5   | [Kibana Share](05-KibanaShare/README.md) | In this lab during the exercises attendees will learn about sharing data with Kibana using Dashboards, Reports, Alerts and Notifications|
 | 6   | [Advanced Alerting](06-AdvancedAlerting/README.md) | In this lab during the exercises attendees will learn about advanced alerting like connectors, actions, case creation and templates.|
 | 7   | [Dashboards](07-Dashboards/README.md) | In this lab during the exercises attendees will learn about dashboards, creating your own dashboards and exporting them.|
 | 8   | [Advanced Investigation](08/AdvancedInvestigation/README.md) | In this lab during the exercises attendees will learn about investigation tools, like built-in from Elastic, others like OSQuery, Sysmon and using Threat Intelligence.|
