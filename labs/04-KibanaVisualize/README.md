@@ -1,43 +1,30 @@
 # Introduction lab exercises
 
-Welcome to the Kibana Search lab exercises. During the lab exercises the student will experiential work through various tasks and activities to gain practical experience and develop new skills. In hands-on learning, attendees are given the opportunity to explore, experiment, and discover knowledge for themselves about the legendary Elastic Stack.
+Welcome to the Kibana Visualize lab exercises. During the lab exercises the student will experiential work through various tasks and activities to gain practical experience and develop new skills. In hands-on learning, attendees are given the opportunity to explore, experiment, and discover knowledge for themselves about the legendary Elastic Stack.
 
 The goal is to get actively engage and ask questions if something is not clear or you are blocked. Important to understand that there are no strong dependencies between labs, so it's okay if you're behind and follow your own pace.
 
 The following key topics are part of these exercises:
 
-- Elasticsearch as search engine
-- Basic querying DSL and filtering
-- Working with Kibana Query Language
-- Understanding aggregations
+- Visualizations exploration 
+- Using Kibana Lens
+- Using Kibana Maps
+- Using Vega custom visualizations
 
-## Exercise 1 - Exploring Driver Licenses
+## Exercise 1 - Analyse Web Logs
 
-This first exercise you are required to import the dataset, which we provide with this material.
+This first exercise you are going to analyse the sample web logs which are already loaded into an index for you.
+During this exercise you will use `Kibana Lens` and improve your visualization with `Annotations` and `Reference` layers.
 
-We already added the CSV download to this course material, which is named as [driverlicenses](./content/driverlicenses.csv).
+### 1.1 - Create insights on average bytes over time
 
-### 1.1 - Import CSV data
+Open Kibana Lens and ensure the index is using `Kibana Sample Data Logs` as Index View.
 
-- Open Home.
-- Click on Add integrations.
-- Search for CSV.
-- Click Upload a file to open the window.
-- Great, let's upload the [driverlicenses](./content/driverlicenses.csv).
-- Everything seems well mapped, but we can correct things here.
-- You can override settings, but keep them *default* for now.
-- Click import.
-- Ensure you have an unique index name starting with your login name like *'user1_driverlicenses'*.
-- Now it's important to adjust the mapping under advanced for the `name` field to `text`.
+- Start with droppping the `Timestamp` field to Grid and choose the `Stacked Bar` visualization.
+- Adjust the Y-Axis to `Average of bytes field`.
 
-```
-    "name": {
-      "type": "text"
-    }
-```
+<img src="https://github.com/avwsolutions/elastic-kibana-training-material/blob/main/labs/04-KibanaVisualize/content/example11.png?raw=true" alt="example 1-1">
 
-- Now view and analyse this imported data set. 
-- Do the events show up in Kibana? Can you temporary achieve this using the default created Data View?
 
 ### 1.2 - Exploring the data set using KQL
 
@@ -165,6 +152,6 @@ Sorting must be Ascending.
 
 ## Next Steps
 
-You are ready to start with the fourth lab about [Kibana Visualize](../04-KibanaVisualize/README.md) for Elastic Kibana. Be aware that the trainer might have to explain the training material and provide additional instructions for a jump start.
+You are ready to start with the fourth lab about [Kibana Visualize](../03-KibanaVisualize/README.md) for Elastic Kibana. Be aware that the trainer might have to explain the training material and provide additional instructions for a jump start.
 
 Enjoy the exercises!!!
