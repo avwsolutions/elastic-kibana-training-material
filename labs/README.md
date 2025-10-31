@@ -12,13 +12,9 @@ If you are unable to complete certain exercises, no problem. You can always comp
 | 2   | [Explore and Analyze using Kibana](02-ExploreandAnalyze/README.md) | In this lab during the exercises attendees will learn about the Explore and Analyse basics using Kibana.|
 | 3   | [Kibana Search](03-KibanaSearch/README.md) | In this lab during the exercises attendees will learn about Kibana Search capabilities like DSL, KQL, Aggregations and more.|
 | 4   | [Kibana Visualize](04-KibanaVisualize/README.md) | In this lab during the exercises attendees will learn about Kibana Visualize capabilities like Kibana Lens, Kibana Maps and using Vega.|
-| 5   | [Kibana Share](05-KibanaShare/README.md) | In this lab during the exercises attendees will learn about sharing data with Kibana using Dashboards, Reports, Alerts and Notifications|
-| 6   | [Advanced Alerting](06-AdvancedAlerting/README.md) | In this lab during the exercises attendees will learn about advanced alerting like connectors, actions, case creation and templates.|
-| 7   | [Dashboards](07-Dashboards/README.md) | In this lab during the exercises attendees will learn about dashboards, creating your own dashboards and exporting them.|
-| 8   | [Advanced Investigation](08/AdvancedInvestigation/README.md) | In this lab during the exercises attendees will learn about investigation tools, like built-in from Elastic, others like OSQuery, Sysmon and using Threat Intelligence.|
-| 9   | [Cloud Security](09-CloudSecurity/README.md) | In this lab during the exercises attendees will learn about Cloud Security Posture Management and Cloud Vulnerability Management with Trivy.|
-| 10   | [EDR with Elastic Defend](10-EDRDefend/README.md) | In this lab during the exercises attendees will learn about EDR with Elastic Defend, configuring the integration, creating event lists and integrate with Microsoft Defender.|
-| 11   | [Advanced Entity Analytics](11-AdvancedAnalytics/README.md) | In this lab during the exercises attendees will learn about Advanced Entity Analytics, which uses Elastic ML and can help to calculate entity risk scores and managee your asset risk within Elastic.|
+| 5   | [Kibana Sharing](05-KibanaSharing/README.md) | In this lab during the exercises attendees will learn about sharing data with Kibana using Dashboards, Reports, Alerts and Notifications|
+| 6   | [Stack Administration](06-StackAdministration/README.md) | In this lab during the exercises attendees will learn about Kibana specific Stack Administration tasks like managing security objects like users, overview of optimization tools like ingest pipelines and make use of advanced configurations such as Spaces.|
+| 7   | [Advanced Settings](07-AdvancedSettings/README.md) | In this lab during the exercises attendees will learn about editing advanced settings and add other advanced configurations like Painless.|
 
 ## Prerequisites
 
@@ -28,10 +24,10 @@ You may use any `Elastic Stack` environment, but as minimum we advice the follow
 - At least 16G of Memory.
 - Approx 5 GB available for storage.
 
-** This training is developed and tested using Elastic Stack 8.17.4 release **
+** This training is developed and tested using Elastic Stack 9.x release **
 
 ## Next Steps
 
-You are ready to start with the first lab about [Prerequisites](00-prereqs/README.md) setting up Elastic Stack with Podman Compose.
+You are ready to start with the first lab about [Elastic Stack](01-ElasticStack/README.md) setting up Elastic Stack with Podman Compose.
 
 Enjoy the exercises!!!

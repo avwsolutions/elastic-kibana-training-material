@@ -34,8 +34,8 @@ We are going to continue with our previously created visualization and additiona
 - Choose custom query and set the KQL query to `response: 503`.
 - Change the name to `HTTP Error`.
 - Change the icon to a `bolt`.
-- As tooltip add an additional field called `ip`.
-- Don't forget to save the dashboard.
+- As tooltip add an additional field called `clientip`.
+- Don't forget to save the visualization to your library for later usage.
 
 <img src="https://github.com/avwsolutions/elastic-kibana-training-material/blob/main/labs/04-KibanaVisualize/content/example12.png?raw=true" alt="example 1-2">
 
@@ -55,7 +55,7 @@ During this exercise you are going to configure a `Reference value`.
 - Change the name to `Expected baseline`.
 - Change the value format to `bytes`.
 - Change the icon to a `tag`.
-- Don't forget to save the dashboard.
+- Don't forget to save the visualization to your library for later usage.
 
 <img src="https://github.com/avwsolutions/elastic-kibana-training-material/blob/main/labs/04-KibanaVisualize/content/example13.png?raw=true" alt="example 1-3">
 
@@ -142,6 +142,6 @@ Now answer the following questions:
 
 ## Next Steps
 
-You are ready to start with the fourth lab about [Kibana Share](../05-KibanaShare/README.md) for Elastic Kibana. Be aware that the trainer might have to explain the training material and provide additional instructions for a jump start.
+You are ready to start with the fourth lab about [Kibana Sharing](../05-KibanaSharing/README.md) for Elastic Kibana. Be aware that the trainer might have to explain the training material and provide additional instructions for a jump start.
 
 Enjoy the exercises!!!
