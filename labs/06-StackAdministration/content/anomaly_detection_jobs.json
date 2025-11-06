@@ -1,0 +1,121 @@
+{
+  "job": {
+    "job_id": "user1-first-ml-job",
+    "custom_settings": {
+      "created_by": "categorization-wizard"
+    },
+    "description": "",
+    "analysis_config": {
+      "bucket_span": "15m",
+      "categorization_field_name": "message",
+      "categorization_analyzer": {
+        "char_filter": [
+          "first_line_with_letters"
+        ],
+        "tokenizer": "ml_standard",
+        "filter": [
+          {
+            "type": "stop",
+            "stopwords": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu",
+              "Fri",
+              "Sat",
+              "Sun",
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+              "GMT",
+              "UTC"
+            ]
+          },
+          {
+            "type": "limit",
+            "max_token_count": "100"
+          }
+        ]
+      },
+      "per_partition_categorization": {
+        "enabled": false
+      },
+      "detectors": [
+        {
+          "detector_description": "count by mlcategory",
+          "function": "count",
+          "by_field_name": "mlcategory",
+          "detector_index": 0
+        }
+      ],
+      "influencers": [
+        "mlcategory"
+      ],
+      "model_prune_window": "30d"
+    },
+    "analysis_limits": {
+      "model_memory_limit": "61mb",
+      "categorization_examples_limit": 4
+    },
+    "data_description": {
+      "time_field": "timestamp",
+      "time_format": "epoch_ms"
+    },
+    "model_plot_config": {
+      "enabled": false,
+      "annotations_enabled": false
+    },
+    "model_snapshot_retention_days": 10,
+    "daily_model_snapshot_retention_after_days": 1,
+    "results_index_name": "shared",
+    "allow_lazy_open": false
+  },
+  "datafeed": {
+    "datafeed_id": "datafeed-user1-first-ml-job",
+    "job_id": "user1-first-ml-job",
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match_all": {}
+          }
+        ]
+      }
+    },
+    "indices": [
+      "kibana_sample_data_logs"
+    ],
+    "scroll_size": 1000,
+    "delayed_data_check_config": {
+      "enabled": true
+    }
+  }
+}
