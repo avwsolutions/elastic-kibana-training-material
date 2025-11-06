@@ -183,7 +183,7 @@ Now don't forget to save your dashboard.
 
 As bonus you can add an additional Wordcloud with `Movie URL` to the `Actionable Insights` section.
 
-### Exercise 3 - Share your awesomeness
+## Exercise 3 - Share your awesomeness
 
 This exercise is all about sharing your results.  It's always good to share results.
 

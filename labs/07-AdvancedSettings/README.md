@@ -11,7 +11,7 @@ The following key topics are part of these exercises:
   - Runtime fields using `Painless`
   - Enrichment policies using `Ingest Pipelines`
 
-### Exercise 1 - Exploring and understanding Kibana Advanced Settings
+## Exercise 1 - Exploring and understanding Kibana Advanced Settings
 
 ### Exercise 1.1 - Changing an Kibana Advanced Setting
 

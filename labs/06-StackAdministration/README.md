@@ -45,9 +45,9 @@ The following key topics are part of these exercises:
 
 Now open an Incognito browser and login into Kibana with your test user called `testuser1`. Now explore and look if all dashboards are working as expected. 
 
-### Exercise 2 - Creating a Simple Machine Learing job
+## Exercise 2 - Creating a Simple Machine Learning job
 
-This exercise you are going to create a `simple` ML Job.  Just follow the steps below to create it using `kibana_sample_data_logs` data set.
+This exercise you are going to create a `simple` ML Job.  Just follow the steps below to create it using `kibana_sample_data_logs` data set. Additionally we have the [original job](./content/anomaly_detection_jobs.json) available.
 
 - Open Kibana
 - Click Machine Learning under Analytics
