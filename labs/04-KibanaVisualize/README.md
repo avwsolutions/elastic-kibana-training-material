@@ -85,7 +85,7 @@ Now answer the following questions:
 - Can you display both display `Stadsdeel` Zuid en Noord? 
 - Which stadsdeel is bigger?
 
-### Exercise 2.3 - Bonus Load Flight destinations on Heat map
+### Exercise 2.2 - Bonus Load Flight destinations on Heat map
 
 This bonus exercise let you load another type of `Maps visualization` using a Heat map. Here we will use the `Flight data`.
 
