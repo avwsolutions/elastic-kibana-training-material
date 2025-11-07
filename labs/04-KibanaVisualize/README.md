@@ -49,7 +49,7 @@ Now answer the following questions:
 In most scenarios you always have a baseline or a reference value. This helps us to easily see deviations from our baseline.
 During this exercise you are going to configure a `Reference value`.
 
-- Start with adding an additional layer and select the `Reference value` type.
+- Start with adding an additional layer and select the `Reference Lines` type.
 - Choose a `Data View`. Now click `add a field`.
 - For method choose `Formula` and set this to `average(bytes, kql='response=200')`.
 - Change the name to `Expected baseline`.
